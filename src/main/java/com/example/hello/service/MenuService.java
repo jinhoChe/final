@@ -1,6 +1,7 @@
 package com.example.hello.service;
 
 import com.example.hello.repo.MenuRepository;
+import com.example.hello.utils.NaverApi;
 import com.example.hello.vo.MenuVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,6 +29,10 @@ public class MenuService {
 
     public List<MenuVo> findRandMenu() {
         return menuRepository.findRandMenu();
+    }
+
+    public String blogSearch(String keyword) {
+        return NaverApi.blogSearch(keyword);
     }
 
 }

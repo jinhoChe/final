@@ -47,5 +47,13 @@ public class HelloApiController {
         return new ResponseEntity<List<MenuVo>>(list, HttpStatus.OK);
     }
 
+    @GetMapping("/api/v1/blogmenu")
+    public ResponseEntity<String> getBestMenu(@RequestParam String keyword) {
+        String json = menuService.blogSearch(keyword);
+        return new ResponseEntity<String>(json, HttpStatus.OK);
+    }
+
+
+
 
 }
