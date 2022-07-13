@@ -21,8 +21,13 @@ public class MenuService {
     }
 
     // 데이터 넣기(insert)
-    public MenuVo save(MenuVo menu) {
-        menuRepository.save(menu);
-        return menu;
+    public Long save(MenuVo menu) {
+        return menuRepository.save(menu).getId();
+//        return menu;
     }
+
+    public List<MenuVo> findRandMenu() {
+        return menuRepository.findRandMenu();
+    }
+
 }
