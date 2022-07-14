@@ -2,6 +2,7 @@ package com.example.hello;
 
 import com.example.hello.dto.TbMenu;
 import com.example.hello.service.MenuService;
+import com.example.hello.service.MusicService;
 import com.example.hello.vo.MenuVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class HelloController {
     @Autowired
     private MenuService menuService;
+
+    @Autowired
+    private MusicService musicService;
     @GetMapping("/")
     public String index(){
         return "index";
@@ -50,6 +54,12 @@ public class HelloController {
     @GetMapping("/blog")
     public String blog() {
         return "blog";
+    }
+
+    @GetMapping("/melon")
+    public String melon(Model model) {
+        model.addAttribute("list", musicService.getMelonMusicList());
+        return "melon";
     }
 
 
