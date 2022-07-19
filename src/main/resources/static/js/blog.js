@@ -2,7 +2,8 @@ $(document).ready(function(){
     $("button").click(function(){
         let url = "/api/v1/blogmenu?keyword=" + $("#keyword").val();
         $.getJSON(url, function(result){
-            let html = "<h4>검색 결과</h4>";
+
+                    let html = "<h4>검색 결과</h4>";
             $.each(result.items, function(i, field){
                 // $("div").append(field + " ");
                 console.log(field.title);
