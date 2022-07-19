@@ -7,9 +7,9 @@ $(document).ready(function(){
             // console.log(field['price']);
             // console.log(field.img);
 
-            html += "<h3>" + field.menu + "</h3>";
-            html += "<h5>" + field.price + "</h5>";
-            html += "<img src='" + field.img + "' width='640'>";
+            html += "<h3>" + field.menu + "<br></h3>";
+            html += "<h5>" + field.price + "<br></h5>";
+            html += "<img src='" + field.img + "' width='350'>";
 
         });
         $("#bestmenu").html(html);
